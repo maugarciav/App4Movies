@@ -1,7 +1,11 @@
 import './App.css'
 import React from 'react'
+import responseMovies from './mocks/with-results.json'
+import { Movies } from './components/movies'
 
 function App () {
+  const movies = responseMovies.Search
+
   return (
     <div className='page'>
       <header>
@@ -9,11 +13,12 @@ function App () {
         <form className='form'>
           <input placeholder='Batman, Whiplash, Avatar...'></input>
           <button type='submit'>Search</button>
+          casc
         </form>
       </header>
 
       <main>
-        Results must be here
+        <Movies movies={movies}/>
       </main>
     </div>
   )
