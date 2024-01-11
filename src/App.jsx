@@ -37,7 +37,7 @@ function useSearch () {
 
 function App () {
   const { search, setSearch, error } = useSearch()
-  const { movies, getMovies } = useMovies({ search })
+  const { movies, getMovies, loading } = useMovies({ search })
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -61,7 +61,7 @@ function App () {
       </header>
 
       <main>
-        <Movies movies={movies}/>
+        {loading ? <p>Loading...</p> : <Movies movies={movies}/>}
       </main>
     </div>
   )
