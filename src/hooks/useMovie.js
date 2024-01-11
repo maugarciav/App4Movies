@@ -22,14 +22,6 @@ export const useMovies = ({ search, sort }) => {
     }
   }, [])
 
-  // const getSortedMovies = () => {
-  //   console.log('getSortedMovies')
-  //   const sortedMovies = sort
-  //     ? [...movies].sort((a, b) => a.title.localeCompare(b.title))
-  //     : movies
-  //   return sortedMovies
-  // }
-
   const sortedMovies = useMemo(() => {
     if (movies === undefined || movies === null) return
     console.log('memoSortedMovies')
